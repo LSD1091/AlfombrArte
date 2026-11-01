@@ -1,0 +1,122 @@
+{
+  "_ayuda": "Para añadir una alfombra copia un bloque de 'alfombras', cambia el id (sin espacios ni tildes) y rellena los campos. Las fotos van en img/catalogo/<id>/ como 1-800.webp y 1-1600.webp, 2-800.webp... Si 'fotos' está vacío se muestra un placeholder. precio_desde es opcional (null = sin precio). Categorías: idea | hechas | inspiracion. DATOS DE EJEMPLO: sustituir.",
+  "alfombras": [
+    {
+      "id": "duna",
+      "nombre": "Duna",
+      "categoria": "hechas",
+      "descripcion": "Ondas suaves en lana color arena y crudo, con relieve en dos alturas de pelo. Pensada para salones luminosos.",
+      "fotos": [],
+      "placeholder": { "tono": "arena", "etiqueta": "Alfombra ondulada en arena, vista cenital" },
+      "medidas": [{ "ancho": 120, "largo": 170 }, { "ancho": 160, "largo": 230 }],
+      "formas": ["rectangular", "irregular"],
+      "colores": [{ "nombre": "Arena", "hex": "#d9c7a7" }, { "nombre": "Crudo", "hex": "#efe6d6" }, { "nombre": "Tostado", "hex": "#b48a5c" }],
+      "precio_desde": 390,
+      "destacada": true
+    },
+    {
+      "id": "terral",
+      "nombre": "Terral",
+      "categoria": "hechas",
+      "descripcion": "Formas orgánicas en terracota sobre fondo hueso. Una pieza cálida que funciona sola en el centro de la estancia.",
+      "fotos": [],
+      "placeholder": { "tono": "terracota", "etiqueta": "Alfombra orgánica terracota en un salón" },
+      "medidas": [{ "ancho": 140, "largo": 200 }],
+      "formas": ["irregular"],
+      "colores": [{ "nombre": "Terracota", "hex": "#a44a28" }, { "nombre": "Hueso", "hex": "#f1e9dc" }],
+      "precio_desde": 450,
+      "destacada": true
+    },
+    {
+      "id": "olivar",
+      "nombre": "Olivar",
+      "categoria": "hechas",
+      "descripcion": "Redonda, en verdes oliva y salvia con un borde en bucle. Ideal para dormitorios y rincones de lectura.",
+      "fotos": [],
+      "placeholder": { "tono": "oliva", "etiqueta": "Alfombra redonda verde oliva junto a un sillón" },
+      "medidas": [{ "ancho": 100, "largo": 100 }, { "ancho": 150, "largo": 150 }],
+      "formas": ["redonda"],
+      "colores": [{ "nombre": "Oliva", "hex": "#5e6b3a" }, { "nombre": "Salvia", "hex": "#c3c7a0" }],
+      "precio_desde": 320,
+      "destacada": true
+    },
+    {
+      "id": "nudo",
+      "nombre": "Nudo",
+      "categoria": "idea",
+      "descripcion": "Una línea continua que se anuda sobre sí misma. Propuesta abierta: elige los colores y la medida.",
+      "fotos": [],
+      "placeholder": { "tono": "lino", "etiqueta": "Boceto: línea continua anudada" },
+      "medidas": [{ "ancho": 90, "largo": 140 }, { "ancho": 140, "largo": 200 }],
+      "formas": ["rectangular", "redonda"],
+      "colores": [{ "nombre": "Carbón", "hex": "#2b2420" }, { "nombre": "Crudo", "hex": "#efe6d6" }],
+      "precio_desde": null,
+      "destacada": false
+    },
+    {
+      "id": "mediodia",
+      "nombre": "Mediodía",
+      "categoria": "idea",
+      "descripcion": "Un sol partido en franjas cálidas. Funciona muy bien en recibidores y a pie de cama.",
+      "fotos": [],
+      "placeholder": { "tono": "terracota", "etiqueta": "Boceto: semicírculo en franjas" },
+      "medidas": [{ "ancho": 70, "largo": 120 }],
+      "formas": ["irregular"],
+      "colores": [{ "nombre": "Mostaza", "hex": "#c99a3b" }, { "nombre": "Terracota", "hex": "#a44a28" }, { "nombre": "Arena", "hex": "#d9c7a7" }],
+      "precio_desde": 180,
+      "destacada": true
+    },
+    {
+      "id": "cuadricula",
+      "nombre": "Cuadrícula",
+      "categoria": "idea",
+      "descripcion": "Retícula irregular dibujada a mano. Discreta y fácil de combinar con cualquier suelo.",
+      "fotos": [],
+      "placeholder": { "tono": "arena", "etiqueta": "Boceto: retícula dibujada a mano" },
+      "medidas": [{ "ancho": 160, "largo": 230 }, { "ancho": 200, "largo": 300 }],
+      "formas": ["rectangular"],
+      "colores": [{ "nombre": "Crudo", "hex": "#efe6d6" }, { "nombre": "Tierra", "hex": "#6b5e53" }],
+      "precio_desde": null,
+      "destacada": false
+    },
+    {
+      "id": "piedras-de-rio",
+      "nombre": "Piedras de río",
+      "categoria": "inspiracion",
+      "descripcion": "Cantos rodados en grises cálidos. Inspiración para piezas de pelo alto con varias alturas.",
+      "fotos": [],
+      "placeholder": { "tono": "carbon", "etiqueta": "Inspiración: cantos rodados en grises cálidos" },
+      "medidas": [{ "ancho": 120, "largo": 180 }],
+      "formas": ["irregular"],
+      "colores": [{ "nombre": "Piedra", "hex": "#8c7f72" }, { "nombre": "Niebla", "hex": "#cfc6b8" }],
+      "precio_desde": null,
+      "destacada": false
+    },
+    {
+      "id": "jardin-seco",
+      "nombre": "Jardín seco",
+      "categoria": "inspiracion",
+      "descripcion": "Hojas y tallos en verde seco sobre lino. Una idea para dormitorios infantiles o zonas de juego.",
+      "fotos": [],
+      "placeholder": { "tono": "oliva", "etiqueta": "Inspiración: hojas secas sobre lino" },
+      "medidas": [{ "ancho": 100, "largo": 150 }],
+      "formas": ["rectangular", "irregular"],
+      "colores": [{ "nombre": "Oliva", "hex": "#5e6b3a" }, { "nombre": "Lino", "hex": "#ede4d6" }],
+      "precio_desde": null,
+      "destacada": false
+    },
+    {
+      "id": "tu-logo",
+      "nombre": "Tu logo en alfombra",
+      "categoria": "inspiracion",
+      "descripcion": "Para estudios, tiendas y oficinas: tu marca convertida en una alfombra de bienvenida.",
+      "fotos": [],
+      "placeholder": { "tono": "lino", "etiqueta": "Inspiración: logotipo tejido en alfombra de entrada" },
+      "medidas": [{ "ancho": 60, "largo": 90 }, { "ancho": 90, "largo": 140 }],
+      "formas": ["rectangular", "redonda", "irregular"],
+      "colores": [],
+      "precio_desde": 150,
+      "destacada": false
+    }
+  ]
+}

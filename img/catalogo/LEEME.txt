@@ -1,0 +1,1 @@
+Fotos del catálogo: una carpeta por alfombra (img/catalogo/<id>/), con 1-800.webp y 1-1600.webp, etc.

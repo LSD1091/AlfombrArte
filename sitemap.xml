@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Al añadir una alfombra a data/catalogo.json, añade aquí su URL alfombra.html?id=<id>. Cambia TU-USUARIO por tu usuario o dominio. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/catalogo.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/tu-diseno.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/encargar.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/como-trabajamos.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/sobre-nosotros.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/contacto.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/legal/aviso-legal.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/legal/privacidad.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/legal/cookies.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/legal/condiciones-venta.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=duna</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=terral</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=olivar</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=nudo</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=mediodia</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=cuadricula</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=piedras-de-rio</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=jardin-seco</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=tu-logo</loc><lastmod>2026-11-01</lastmod></url>
+</urlset>
