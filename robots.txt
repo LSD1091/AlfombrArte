@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /gracias.html
 
-Sitemap: https://TU-USUARIO.github.io/alfombrarte/sitemap.xml
+Sitemap: https://lsd1091.github.io/AlfombrArte/sitemap.xml

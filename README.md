@@ -73,7 +73,7 @@ Y abre http://localhost:8080. (Si tienes Python: `python -m http.server 8080`.)
    - Cuidado con las comas: cada bloque va separado por una coma, y el último no lleva coma detrás. Si el catálogo deja de cargar, pega el archivo en https://jsonlint.com para ver el error.
 
 3. **Sitemap.** Añade una línea en `sitemap.xml`:
-   `<url><loc>https://TU-USUARIO.github.io/alfombrarte/alfombra.html?id=bosque-azul</loc></url>`
+   `<url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=bosque-azul</loc></url>`
 
 4. Sube los cambios a GitHub (ver abajo). En un par de minutos estará publicada.
 
@@ -96,7 +96,7 @@ En la foto principal de Inicio usa `loading="eager"` (es lo primero que se ve). 
 
 Busca en todo el proyecto `[` y `TU-USUARIO`:
 
-- `TU-USUARIO.github.io/alfombrarte` → tu URL real (en todas las páginas, `sitemap.xml` y `robots.txt`).
+- `lsd1091.github.io/AlfombrArte` → tu URL real (en todas las páginas, `sitemap.xml` y `robots.txt`).
 - `[EMAIL DE CONTACTO]`, `[TITULAR]`, `[NIF]`, teléfono, Instagram, dirección, horario.
 - Técnica y materiales reales (Cómo trabajamos), envío y métodos de pago.
 - Textos de Sobre nosotros y cifras.
@@ -114,11 +114,11 @@ Busca en todo el proyecto `[` y `TU-USUARIO`:
    git add .
    git commit -m "Primera versión de la web"
    git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/alfombrarte.git
+   git remote add origin https://github.com/LSD1091/AlfombrArte.git
    git push -u origin main
    ```
 3. En GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`. Guarda.
-4. En 1-2 minutos la web estará en `https://TU-USUARIO.github.io/alfombrarte/`.
+4. En 1-2 minutos la web estará en `https://lsd1091.github.io/AlfombrArte/`.
 5. Cada vez que hagas `git push`, se vuelve a publicar sola.
 
 **Dominio propio** (opcional): en Settings → Pages → Custom domain escribe tu dominio y configura el DNS como indica GitHub. Después cambia `<base href="/alfombrarte/">` por `<base href="/">` en `404.html` y actualiza las URL absolutas (canonical, Open Graph, sitemap, robots).

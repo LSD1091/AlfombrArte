@@ -687,3 +687,7 @@ a.canal:hover { transform: translateY(-3px); box-shadow: var(--sombra); color: v
   .js .revelar { opacity: 1; transform: none; }
   .hero__sello { animation: none; }
 }
+
+/* Ajustes tras rellenar datos reales */
+@media (min-width: 64rem) { .contacto-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 52rem) { .cifras { grid-template-columns: repeat(3, 1fr); } }

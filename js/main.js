@@ -399,7 +399,7 @@
     '      <div class="campo"><label for="telefono">Teléfono <span class="campo__opcional">(opcional)</span></label><input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" maxlength="30" aria-describedby="e-telefono"><p class="error" id="e-telefono" aria-live="polite"></p></div>' +
     '    </div>' +
     '    <div class="campo-trampa" aria-hidden="true"><label for="web">No rellenes este campo</label><input type="text" id="web" name="web" tabindex="-1" autocomplete="off"></div>' +
-    '    <p class="info-rgpd"><strong>Información básica sobre protección de datos.</strong> Responsable: [TITULAR]. Finalidad: responder a tu solicitud y prepararte un presupuesto. Legitimación: tu consentimiento y la aplicación de medidas precontractuales. Destinatarios: no se ceden datos a terceros, salvo proveedores de alojamiento (Supabase, servidores en la UE). Derechos: acceso, rectificación, supresión y otros, como se explica en la <a href="{{privacidad}}">política de privacidad</a>.</p>' +
+    '    <p class="info-rgpd"><strong>Información básica sobre protección de datos.</strong> Responsable: Trufos S.L.. Finalidad: responder a tu solicitud y prepararte un presupuesto. Legitimación: tu consentimiento y la aplicación de medidas precontractuales. Destinatarios: no se ceden datos a terceros, salvo proveedores de alojamiento (Supabase, servidores en la UE). Derechos: acceso, rectificación, supresión y otros, como se explica en la <a href="{{privacidad}}">política de privacidad</a>.</p>' +
     '    <div class="campo"><div class="casilla"><input type="checkbox" id="privacidad" name="acepta_privacidad" aria-describedby="e-privacidad"><label for="privacidad">He leído y acepto la <a href="{{privacidad}}" target="_blank" rel="noopener">política de privacidad</a>.</label></div><p class="error" id="e-privacidad" aria-live="polite"></p></div>' +
     '  </fieldset>' +
 
@@ -664,7 +664,7 @@
         .catch(function (err) {
           if (window.console) console.error("Error al enviar la solicitud:", err);
           estadoEnvio(false, "Enviar solicitud");
-          aviso.textContent = "No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo. Si sigue fallando, escríbenos a [EMAIL DE CONTACTO].";
+          aviso.textContent = "No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo. Si sigue fallando, escríbenos a lsd1091@gmail.com.";
           aviso.focus();
         });
     });
