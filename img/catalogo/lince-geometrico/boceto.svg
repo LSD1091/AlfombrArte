@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 500" role="img" aria-label="Boceto: alfombra con cabeza de lince geométrico">
+  <defs>
+    <filter id="lana" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.55 0 0 0 -0.12" result="motas"/>
+      <feComposite in="motas" in2="SourceGraphic" operator="in" result="tex"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="tex"/></feMerge>
+    </filter>
+    <filter id="sombra" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#2b2420" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="#efe7da"/>
+  <g filter="url(#sombra)"><g filter="url(#lana)" stroke="#2b2420" stroke-opacity="0.18" stroke-width="1.5" stroke-linejoin="round">
+    <polygon fill="#9c6a3c" points="200,140 250,130 305,15 330,150 345,230 370,300 340,330 360,370 300,410 250,445 200,455 150,445 100,410 40,370 60,330 30,300 55,230 70,150 95,15 150,130"/>
+    <g id="mitad">
+      <polygon fill="#9c6a3c" points="250,130 305,15 330,150"/>
+      <polygon fill="#efe6d6" points="266,128 299,52 316,143"/>
+      <polygon fill="#2b2420" points="296,46 305,8 313,46"/>
+      <polygon fill="#d9c7a7" points="200,140 250,130 225,200"/>
+      <polygon fill="#c98b4f" points="250,130 330,150 225,200"/>
+      <polygon fill="#e3d4ba" points="200,140 225,200 200,212"/>
+      <polygon fill="#c98b4f" points="330,150 345,230 260,240"/>
+      <polygon fill="#d9c7a7" points="225,200 330,150 260,240"/>
+      <polygon fill="#9c6a3c" points="345,230 370,300 285,300"/>
+      <polygon fill="#d9c7a7" points="260,240 345,230 285,300"/>
+      <polygon fill="#efe6d6" points="370,300 340,330 285,300"/>
+      <polygon fill="#efe6d6" points="340,330 360,370 290,352"/>
+      <polygon fill="#d9c7a7" points="285,300 340,330 290,352"/>
+      <polygon fill="#c98b4f" points="200,212 225,200 214,300"/>
+      <polygon fill="#e3d4ba" points="225,200 260,240 214,300"/>
+      <polygon fill="#d9c7a7" points="260,240 285,300 214,300"/>
+      <polygon fill="#efe6d6" points="200,318 214,300 285,300 290,352 200,342"/>
+      <polygon fill="#efe6d6" points="200,342 290,352 250,410"/>
+      <polygon fill="#d9c7a7" points="250,410 290,352 300,410"/>
+      <polygon fill="#d9c7a7" points="200,342 250,410 200,455"/>
+      <polygon fill="#9c6a3c" points="250,410 300,410 250,445"/>
+      <polygon fill="#efe6d6" points="200,455 250,410 250,445"/>
+      <polygon fill="#a44a28" points="203,152 212,150 205,196"/>
+      <polygon fill="#a44a28" points="222,148 232,146 214,190"/>
+      <polygon fill="#7d8c3c" stroke="#2b2420" stroke-opacity="1" stroke-width="3" points="220,238 250,222 274,236 248,252"/>
+      <ellipse cx="247" cy="237" rx="4" ry="9" fill="#2b2420" stroke="none"/>
+    </g>
+    <use href="#mitad" xlink:href="#mitad" transform="translate(400 0) scale(-1 1)"/>
+    <polygon fill="#a44a28" stroke="#2b2420" stroke-opacity="0.5" points="184,298 216,298 200,320"/>
+    <path d="M200 320 L200 336 M200 336 L184 348 M200 336 L216 348" stroke="#2b2420" stroke-opacity="0.85" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g></g>
+</svg>

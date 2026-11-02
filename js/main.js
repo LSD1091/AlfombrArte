@@ -46,12 +46,22 @@
     return catalogoPromesa;
   }
 
-  // Foto con srcset WebP, o placeholder si la alfombra aún no tiene fotos.
+  // Foto con srcset WebP; si aún no hay fotos, el boceto SVG o un placeholder.
   function foto(alfombra, indice, opciones) {
     opciones = opciones || {};
     var f = (alfombra.fotos || [])[indice || 0];
     var cont = el("div", { clase: "foto" });
-    if (f) {
+    if (!f && alfombra.boceto && !indice) {
+      cont.classList.add("foto--boceto");
+      cont.appendChild(el("img", {
+        src: ruta(alfombra.boceto),
+        alt: "Boceto de la alfombra " + alfombra.nombre,
+        loading: opciones.eager ? "eager" : "lazy",
+        decoding: "async",
+        width: "400",
+        height: "500"
+      }));
+    } else if (f) {
       var base = ruta("img/catalogo/" + alfombra.id + "/" + f.archivo);
       cont.appendChild(el("img", {
         src: base + "-800.webp",

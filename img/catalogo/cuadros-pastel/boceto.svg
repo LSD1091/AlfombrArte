@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Boceto: alfombra de cuadros en tonos pastel">
+  <defs>
+    <filter id="lana" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.55 0 0 0 -0.12" result="motas"/>
+      <feComposite in="motas" in2="SourceGraphic" operator="in" result="tex"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="tex"/></feMerge>
+    </filter>
+    <filter id="sombra" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#2b2420" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="#efe7da"/>
+  <clipPath id="borde"><rect x="70" y="55" width="260" height="390" rx="10"/></clipPath>
+  <g filter="url(#sombra)"><g filter="url(#lana)" clip-path="url(#borde)">
+    <rect x="70" y="55" width="260" height="390" fill="#cdbfa8"/>
+    <rect x="71" y="56" width="63" height="63" rx="5" fill="#c99a3b"/>
+    <rect x="136" y="56" width="63" height="63" rx="5" fill="#d9867a"/>
+    <rect x="201" y="56" width="63" height="63" rx="5" fill="#a9bfb0"/>
+    <rect x="266" y="56" width="63" height="63" rx="5" fill="#c98b4f"/>
+    <rect x="71" y="121" width="63" height="63" rx="5" fill="#e8a99a"/>
+    <rect x="136" y="121" width="63" height="63" rx="5" fill="#8a8f98"/>
+    <rect x="201" y="121" width="63" height="63" rx="5" fill="#d4b25a"/>
+    <rect x="266" y="121" width="63" height="63" rx="5" fill="#b8758a"/>
+    <rect x="71" y="186" width="63" height="63" rx="5" fill="#a9bfb0"/>
+    <rect x="136" y="186" width="63" height="63" rx="5" fill="#c45f3c"/>
+    <rect x="201" y="186" width="63" height="63" rx="5" fill="#e8a99a"/>
+    <rect x="266" y="186" width="63" height="63" rx="5" fill="#8a8f98"/>
+    <rect x="71" y="251" width="63" height="63" rx="5" fill="#d9867a"/>
+    <rect x="136" y="251" width="63" height="63" rx="5" fill="#d4b25a"/>
+    <rect x="201" y="251" width="63" height="63" rx="5" fill="#8a8f98"/>
+    <rect x="266" y="251" width="63" height="63" rx="5" fill="#c99a3b"/>
+    <rect x="71" y="316" width="63" height="63" rx="5" fill="#b8758a"/>
+    <rect x="136" y="316" width="63" height="63" rx="5" fill="#a9bfb0"/>
+    <rect x="201" y="316" width="63" height="63" rx="5" fill="#c45f3c"/>
+    <rect x="266" y="316" width="63" height="63" rx="5" fill="#e8a99a"/>
+    <rect x="71" y="381" width="63" height="63" rx="5" fill="#8a8f98"/>
+    <rect x="136" y="381" width="63" height="63" rx="5" fill="#e8a99a"/>
+    <rect x="201" y="381" width="63" height="63" rx="5" fill="#c99a3b"/>
+    <rect x="266" y="381" width="63" height="63" rx="5" fill="#a9bfb0"/>
+  </g></g>
+</svg>

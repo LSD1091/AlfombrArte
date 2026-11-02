@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Boceto: alfombra con forma de hoja de monstera en verdes y morados">
+  <defs>
+    <filter id="lana" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.55 0 0 0 -0.12" result="motas"/>
+      <feComposite in="motas" in2="SourceGraphic" operator="in" result="tex"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="tex"/></feMerge>
+    </filter>
+    <filter id="sombra" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#2b2420" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="#efe7da"/>
+  <mask id="hoja">
+    <path d="M205 48 C310 52 372 140 368 252 C364 352 300 422 232 432 C216 434 207 424 202 410 C197 424 188 434 172 432 C104 422 38 352 34 252 C30 140 98 52 205 48 Z" fill="#fff"/>
+    <path d="M196 404 L204 404 L206 482 L194 482 Z" fill="#fff"/>
+    <path d="M400 128 Q312 150 222 196 L226 205 Q318 168 400 146 Z" fill="#000"/>
+    <path d="M400 214 Q318 226 228 262 L231 271 Q322 244 400 236 Z" fill="#000"/>
+    <path d="M400 300 Q318 300 230 326 L232 335 Q320 318 400 326 Z" fill="#000"/>
+    <path d="M380 382 Q306 370 226 380 L227 389 Q300 386 370 404 Z" fill="#000"/>
+    <path d="M0 160 Q88 176 176 222 L172 231 Q84 196 0 180 Z" fill="#000"/>
+    <path d="M0 246 Q84 254 172 290 L169 299 Q80 272 0 268 Z" fill="#000"/>
+    <path d="M10 334 Q90 330 170 352 L168 361 Q84 348 16 356 Z" fill="#000"/>
+    <ellipse cx="262" cy="232" rx="11" ry="5" transform="rotate(-20 262 232)" fill="#000"/>
+    <ellipse cx="140" cy="262" rx="11" ry="5" transform="rotate(20 140 262)" fill="#000"/>
+    <ellipse cx="270" cy="356" rx="9" ry="4.5" transform="rotate(-8 270 356)" fill="#000"/>
+    <ellipse cx="132" cy="326" rx="9" ry="4.5" transform="rotate(10 132 326)" fill="#000"/>
+  </mask>
+  <g filter="url(#sombra)"><g filter="url(#lana)" mask="url(#hoja)">
+    <rect x="20" y="30" width="360" height="460" fill="#1f6b63"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M10 95 C110 60 230 140 390 85" stroke="#144d48" stroke-width="44"/>
+      <path d="M10 150 C120 120 240 200 390 140" stroke="#7a4fa0" stroke-width="40"/>
+      <path d="M10 205 C140 175 230 250 390 200" stroke="#39b3a6" stroke-width="30"/>
+      <path d="M10 262 C120 230 260 305 390 255" stroke="#b07cc6" stroke-width="42"/>
+      <path d="M10 325 C150 295 240 370 390 318" stroke="#2e8f86" stroke-width="36"/>
+      <path d="M10 385 C140 360 250 430 390 380" stroke="#5b3a82" stroke-width="44"/>
+      <path d="M10 450 C140 430 260 490 390 445" stroke="#144d48" stroke-width="50"/>
+    </g>
+    <path d="M200 470 C202 360 198 220 200 70" stroke="#0f3b37" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.8"/>
+  </g></g>
+</svg>
