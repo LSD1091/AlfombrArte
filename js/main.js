@@ -62,6 +62,7 @@
         height: "500"
       }));
     } else if (f) {
+      if (f.recreacion) cont.classList.add("foto--recreacion");
       var base = ruta("img/catalogo/" + alfombra.id + "/" + f.archivo);
       cont.appendChild(el("img", {
         src: base + "-800.webp",
