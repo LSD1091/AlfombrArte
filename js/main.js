@@ -292,7 +292,7 @@
     fila("Medidas", document.createTextNode(
       (a.medidas || []).map(function (m) {
         return m.ancho === m.largo && (a.formas || []).indexOf("redonda") > -1 ? "Ø " + m.ancho + " cm" : m.ancho + " × " + m.largo + " cm";
-      }).concat("o a tu medida").join(" · ")
+      }).concat((a.medidas || []).length ? "o a tu medida" : "A tu medida").join(" · ")
     ));
     fila("Formas", document.createTextNode(mayuscula((a.formas || []).map(function (f) { return FORMAS[f] || f; }).join(", ")) || "A consultar"));
     var colores;

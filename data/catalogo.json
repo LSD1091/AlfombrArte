@@ -2,6 +2,18 @@
   "_ayuda": "Para añadir una alfombra copia un bloque de 'alfombras', cambia el id (sin espacios ni tildes) y rellena los campos. Las fotos van en img/catalogo/<id>/ como 1-800.webp y 1-1600.webp, 2-800.webp... Si 'fotos' está vacío se muestra un placeholder. precio_desde es opcional (null = sin precio). Categorías: idea | hechas | inspiracion. DATOS DE EJEMPLO: sustituir.",
   "alfombras": [
     {
+      "id": "axelote",
+      "nombre": "Axelote",
+      "categoria": "hechas",
+      "descripcion": "Un ajolote azul con branquias amarillas y su nombre en grande, sobre una forma libre de nubes en azul marino, celeste y blanco. Pieza única tejida en nuestro taller.",
+      "fotos": [{ "archivo": "1", "alt": "Alfombra Axelote: ajolote azul con branquias amarillas y la palabra AXELOTE, en forma libre azul y blanca" }],
+      "medidas": [],
+      "formas": ["irregular"],
+      "colores": [{ "nombre": "Azul marino", "hex": "#1f5aa6" }, { "nombre": "Celeste", "hex": "#8fb8de" }, { "nombre": "Blanco", "hex": "#f4f2ee" }, { "nombre": "Amarillo", "hex": "#e3a81e" }, { "nombre": "Negro", "hex": "#1d1d1f" }],
+      "precio_desde": null,
+      "destacada": true
+    },
+    {
       "id": "duna",
       "nombre": "Duna",
       "categoria": "hechas",
