@@ -1,4 +1,4 @@
-/* AlfombrArte · main.js
+/* Trufing · main.js
    Un único script para todo el sitio. Cada módulo se activa solo si
    encuentra en la página el elemento que lo necesita (data-atributos). */
 (function () {
@@ -226,7 +226,7 @@
       document.querySelectorAll(".migas, [data-ficha-otras]").forEach(function (n) { (n.closest("section") || n).hidden = true; });
       var v = document.querySelector("[data-ficha-vacia]");
       if (v) v.hidden = false;
-      document.title = "Alfombra no encontrada · AlfombrArte";
+      document.title = "Alfombra no encontrada · Trufing";
       var robots = el("meta", { name: "robots", content: "noindex" });
       document.head.appendChild(robots);
     }
@@ -238,10 +238,10 @@
     var urlPedir = ruta("encargar.html?tipo=catalogo&modelo=" + encodeURIComponent(a.id));
 
     // Metadatos de la página
-    document.title = a.nombre + " · Alfombra hecha a mano por encargo · AlfombrArte";
+    document.title = a.nombre + " · Alfombra hecha a mano por encargo · Trufing";
     var setMeta = function (sel, valor) { var m = document.querySelector(sel); if (m) m.setAttribute("content", valor); };
     setMeta('meta[name="description"]', a.nombre + ": " + a.descripcion);
-    setMeta('meta[property="og:title"]', a.nombre + " · AlfombrArte");
+    setMeta('meta[property="og:title"]', a.nombre + " · Trufing");
     setMeta('meta[property="og:description"]', a.descripcion);
     var canon = document.querySelector('link[rel="canonical"]');
     if (canon) canon.href = canon.href.split("?")[0] + "?id=" + encodeURIComponent(a.id);
@@ -327,7 +327,7 @@
       name: a.nombre,
       description: a.descripcion,
       category: "Alfombras hechas a mano",
-      brand: { "@type": "Brand", name: "AlfombrArte" },
+      brand: { "@type": "Brand", name: "Trufing" },
       url: urlFicha,
       image: (a.fotos || []).map(function (f) { return ruta("img/catalogo/" + a.id + "/" + f.archivo + "-1600.webp"); })
     };
@@ -427,7 +427,7 @@
   function iniciarFormulario() {
     var cont = document.querySelector("[data-form-encargo]");
     if (!cont) return;
-    var cfg = window.ALFOMBRARTE_CONFIG || {};
+    var cfg = window.TRUFING_CONFIG || {};
     var maxBytes = (cfg.maxImagenMB || 10) * 1024 * 1024;
 
     cont.innerHTML = PLANTILLA_FORM
@@ -722,7 +722,7 @@
   /* Año en el pie ------------------------------------------------------ */
   function iniciarAnio() {
     document.querySelectorAll("[data-anio]").forEach(function (n) { n.textContent = new Date().getFullYear(); });
-    var plazo = (window.ALFOMBRARTE_CONFIG || {}).plazoRespuesta;
+    var plazo = (window.TRUFING_CONFIG || {}).plazoRespuesta;
     if (plazo) document.querySelectorAll("[data-plazo]").forEach(function (n) { n.textContent = plazo; });
   }
 
@@ -737,5 +737,5 @@
   });
 
   // Expuesto para depuración y para las fases 2-3.
-  window.AlfombrArte = { cargarCatalogo: cargarCatalogo, ruta: ruta };
+  window.Trufing = { cargarCatalogo: cargarCatalogo, ruta: ruta };
 })();

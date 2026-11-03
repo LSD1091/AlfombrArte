@@ -1,4 +1,4 @@
-# AlfombrArte · web
+# Trufing · web
 
 Web estática de alfombras hechas a mano por encargo. HTML, CSS y JavaScript sin frameworks ni build step, alojada en GitHub Pages. Las solicitudes de encargo se guardan en Supabase.
 

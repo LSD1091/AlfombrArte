@@ -1,6 +1,6 @@
-/* Configuración pública de AlfombrArte.
+/* Configuración pública de Trufing.
    Solo la URL del proyecto y la clave PUBLICABLE de Supabase: nunca la service_role. */
-window.ALFOMBRARTE_CONFIG = {
+window.TRUFING_CONFIG = {
   supabaseUrl: "https://lsvhkqqqribpdqqcxgwt.supabase.co",
   supabaseKey: "sb_publishable_quoyp-ubNnfMF63zpXSPxg_qtMeT5DA",
   bucketImagenes: "imagenes-clientes",
