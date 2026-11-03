@@ -85,7 +85,7 @@
   }
 
   function tarjeta(a) {
-    var enlace = el("a", { href: ruta("alfombra.html?id=" + encodeURIComponent(a.id)), texto: a.nombre });
+    var enlace = el("a", { href: ruta("alfombras/" + encodeURIComponent(a.id) + "/"), texto: a.nombre });
     var meta = el("p", { clase: "tarjeta__meta" }, [
       el("span", { texto: a.medidas && a.medidas.length ? "Desde " + a.medidas[0].ancho + " × " + a.medidas[0].largo + " cm" : "A medida" }),
       a.precio_desde ? el("span", { clase: "tarjeta__precio", texto: "desde " + euros(a.precio_desde) }) : null
@@ -207,142 +207,20 @@
   }
 
   /* Ficha de alfombra -------------------------------------------------- */
-  var FORMAS = { rectangular: "rectangular", redonda: "redonda", irregular: "forma libre" };
-  var mayuscula = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
-
+  // Las fichas son páginas estáticas (alfombras/<id>/, generadas con
+  // tools/generar.ps1); aquí solo se cambia la foto al pulsar una miniatura.
   function iniciarFicha() {
-    var raiz = document.querySelector("[data-ficha]");
-    if (!raiz) return;
-    var id = new URLSearchParams(location.search).get("id");
-
-    cargarCatalogo().then(function (lista) {
-      var a = lista.filter(function (x) { return x.id === id; })[0];
-      if (!a) { mostrarVacia(); return; }
-      pintarFicha(a, lista);
-    }).catch(mostrarVacia);
-
-    function mostrarVacia() {
-      raiz.hidden = true;
-      document.querySelectorAll(".migas, [data-ficha-otras]").forEach(function (n) { (n.closest("section") || n).hidden = true; });
-      var v = document.querySelector("[data-ficha-vacia]");
-      if (v) v.hidden = false;
-      document.title = "Alfombra no encontrada · Trufing";
-      var robots = el("meta", { name: "robots", content: "noindex" });
-      document.head.appendChild(robots);
-    }
-  }
-
-  function pintarFicha(a, lista) {
-    var cat = CATEGORIAS[a.categoria] || a.categoria;
-    var urlFicha = ruta("alfombra.html?id=" + encodeURIComponent(a.id));
-    var urlPedir = ruta("encargar.html?tipo=catalogo&modelo=" + encodeURIComponent(a.id));
-
-    // Metadatos de la página
-    document.title = a.nombre + " · Alfombra hecha a mano por encargo · Trufing";
-    var setMeta = function (sel, valor) { var m = document.querySelector(sel); if (m) m.setAttribute("content", valor); };
-    setMeta('meta[name="description"]', a.nombre + ": " + a.descripcion);
-    setMeta('meta[property="og:title"]', a.nombre + " · Trufing");
-    setMeta('meta[property="og:description"]', a.descripcion);
-    var canon = document.querySelector('link[rel="canonical"]');
-    if (canon) canon.href = canon.href.split("?")[0] + "?id=" + encodeURIComponent(a.id);
-
-    // Migas
-    document.querySelectorAll("[data-ficha-cat]").forEach(function (n) {
-      n.textContent = cat;
-      if (n.tagName === "A") n.href = ruta("catalogo.html?categoria=" + a.categoria);
-    });
-    document.querySelectorAll("[data-ficha-nombre]").forEach(function (n) { n.textContent = a.nombre; });
-
-    // Galería
-    var principal = document.querySelector("[data-galeria-principal]");
     var minis = document.querySelector("[data-galeria-miniaturas]");
-    var total = Math.max((a.fotos || []).length, 1);
-    var mostrar = function (i) {
-      var nueva = foto(a, i, { eager: true, sizes: "(min-width: 56rem) 55vw, 100vw" });
-      nueva.classList.add("galeria__principal");
-      principal.replaceWith(nueva);
-      principal = nueva;
-      if (minis) minis.querySelectorAll("button").forEach(function (b, j) { b.setAttribute("aria-current", String(i === j)); });
-    };
-    mostrar(0);
-    if (minis && total > 1) {
-      for (var i = 0; i < total; i++) {
-        (function (i) {
-          var b = el("button", { type: "button", "aria-label": "Ver foto " + (i + 1) + " de " + total, "aria-current": String(i === 0) },
-            [foto(a, i, { sizes: "72px" })]);
-          b.addEventListener("click", function () { mostrar(i); });
-          minis.appendChild(el("li", {}, [b]));
-        })(i);
-      }
-    }
-
-    // Texto y datos
-    document.querySelector("[data-ficha-desc]").textContent = a.descripcion;
-    var precio = document.querySelector("[data-ficha-precio]");
-    if (a.precio_desde) {
-      precio.textContent = "desde " + euros(a.precio_desde);
-      precio.appendChild(el("small", { texto: "Precio orientativo. El final depende de la medida y los colores." }));
-    } else {
-      precio.textContent = "Precio según presupuesto";
-    }
-
-    var datos = document.querySelector("[data-ficha-datos]");
-    var fila = function (titulo, contenido) {
-      datos.appendChild(el("div", {}, [el("dt", { texto: titulo }), el("dd", {}, [contenido])]));
-    };
-    fila("Medidas", document.createTextNode(
-      (a.medidas || []).map(function (m) {
-        return m.ancho === m.largo && (a.formas || []).indexOf("redonda") > -1 ? "Ø " + m.ancho + " cm" : m.ancho + " × " + m.largo + " cm";
-      }).concat((a.medidas || []).length ? "o a tu medida" : "A tu medida").join(" · ")
-    ));
-    fila("Formas", document.createTextNode(mayuscula((a.formas || []).map(function (f) { return FORMAS[f] || f; }).join(", ")) || "A consultar"));
-    var colores;
-    if (a.colores && a.colores.length) {
-      colores = el("ul", { clase: "muestras" }, a.colores.map(function (c) {
-        var m = el("span", { clase: "muestra", "aria-hidden": "true" });
-        m.style.setProperty("--c", c.hex);
-        return el("li", {}, [m, document.createTextNode(c.nombre)]);
-      }));
-    } else {
-      colores = document.createTextNode("Los que elijas");
-    }
-    fila("Colores", colores);
-    fila("Plazo", document.createTextNode("2–4 semanas de fabricación"));
-
-    document.querySelectorAll("[data-ficha-pedir]").forEach(function (b) { b.href = urlPedir; });
-
-    // Otras alfombras de la misma categoría
-    var otras = document.querySelector("[data-ficha-otras]");
-    if (otras) {
-      lista.filter(function (x) { return x.id !== a.id && x.categoria === a.categoria; }).slice(0, 3)
-        .forEach(function (x) { otras.appendChild(tarjeta(x)); });
-      if (!otras.children.length) otras.closest("section").hidden = true;
-      revelar(otras);
-    }
-
-    // Datos estructurados Product
-    var producto = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: a.nombre,
-      description: a.descripcion,
-      category: "Alfombras hechas a mano",
-      brand: { "@type": "Brand", name: "Trufing" },
-      url: urlFicha,
-      image: (a.fotos || []).map(function (f) { return ruta("img/catalogo/" + a.id + "/" + f.archivo + "-1600.webp"); })
-    };
-    if (a.precio_desde) {
-      producto.offers = {
-        "@type": "AggregateOffer",
-        priceCurrency: "EUR",
-        lowPrice: a.precio_desde,
-        availability: "https://schema.org/MadeToOrder",
-        areaServed: "ES"
-      };
-    }
-    document.head.appendChild(el("script", { type: "application/ld+json", texto: JSON.stringify(producto) }));
-
-    document.querySelector("[data-ficha]").removeAttribute("aria-busy");
+    var img = document.querySelector(".galeria__principal img");
+    if (!minis || !img) return;
+    minis.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        img.src = b.getAttribute("data-src");
+        img.srcset = b.getAttribute("data-srcset");
+        img.alt = b.getAttribute("data-alt");
+        minis.querySelectorAll("button").forEach(function (o) { o.setAttribute("aria-current", String(o === b)); });
+      });
+    });
   }
 
   /* Formulario de encargo ---------------------------------------------- */

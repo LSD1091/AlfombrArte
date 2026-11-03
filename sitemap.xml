@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Al añadir una alfombra a data/catalogo.json, añade aquí su URL alfombra.html?id=<id>. Cambia TU-USUARIO por tu usuario o dominio. -->
+<!-- Generado por tools/generar.ps1. No lo edites a mano. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lsd1091.github.io/AlfombrArte/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/catalogo.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/tu-diseno.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/encargar.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/como-trabajamos.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/sobre-nosotros.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/contacto.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/aviso-legal.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/privacidad.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/cookies.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/condiciones-venta.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=axelote</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=capibara</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=monstruo-azul</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=duna</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=terral</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=olivar</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=nudo</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=mediodia</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=cuadricula</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=cuadros-pastel</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=musgo</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=monstera</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=lince-geometrico</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras-con-logo.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras-infantiles.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/catalogo.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/como-trabajamos.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/contacto.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/encargar.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/sobre-nosotros.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/tu-diseno.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/axelote/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/capibara/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/cuadricula/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/cuadros-pastel/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/duna/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/lince-geometrico/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/mediodia/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/monstera/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/monstruo-azul/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/musgo/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/nudo/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/olivar/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/alfombras/terral/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/aviso-legal.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/condiciones-venta.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/cookies.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lsd1091.github.io/AlfombrArte/legal/privacidad.html</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>

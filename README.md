@@ -7,7 +7,10 @@ Web estática de alfombras hechas a mano por encargo. HTML, CSS y JavaScript sin
 ```
 index.html               Inicio
 catalogo.html            Catálogo filtrable (lee data/catalogo.json)
-alfombra.html?id=<id>    Ficha de alfombra (lee data/catalogo.json)
+alfombras/<id>/          Fichas de alfombra (generadas con tools/generar.ps1)
+alfombras-con-logo.html  Página para negocios (búsqueda «alfombra con logo»)
+alfombras-infantiles.html Página para familias (búsqueda «alfombra infantil personalizada»)
+alfombra.html            Redirige los enlaces antiguos alfombra.html?id=<id>
 tu-diseno.html           Diseño propio + formulario
 encargar.html            Formulario de encargo (?tipo=…&modelo=<id>)
 gracias.html             Confirmación tras enviar
@@ -24,6 +27,9 @@ fonts/                   Fraunces y Figtree (autoalojadas)
 img/catalogo/<id>/       Fotos de cada alfombra
 supabase/migrations/     SQL aplicado en Supabase (copia de referencia)
 tools/servidor.ps1       Servidor local para pruebas
+tools/generar.ps1        Genera fichas, tarjetas estáticas y sitemap desde el catálogo
+tools/cambiar-dominio.ps1 Pasa la web a un dominio propio en un paso
+tools/dominio.txt        URL pública actual (la usan los dos scripts)
 sitemap.xml, robots.txt, .nojekyll
 ```
 
@@ -72,8 +78,13 @@ Y abre http://localhost:8080. (Si tienes Python: `python -m http.server 8080`.)
    - Mientras `fotos` esté vacío (`[]`) se muestra un placeholder; el bloque `placeholder` solo sirve para eso y puedes borrarlo cuando tengas fotos.
    - Cuidado con las comas: cada bloque va separado por una coma, y el último no lleva coma detrás. Si el catálogo deja de cargar, pega el archivo en https://jsonlint.com para ver el error.
 
-3. **Sitemap.** Añade una línea en `sitemap.xml`:
-   `<url><loc>https://lsd1091.github.io/AlfombrArte/alfombra.html?id=bosque-azul</loc></url>`
+3. **Generar las páginas.** Ejecuta:
+
+   ```bash
+   powershell -ExecutionPolicy Bypass -File tools/generar.ps1
+   ```
+
+   Crea o actualiza `alfombras/<id>/` (la ficha, que Google puede leer sin JavaScript), las tarjetas de Catálogo e Inicio y `sitemap.xml`. Hazlo **siempre** que cambies `data/catalogo.json`; no edites a mano esos archivos generados.
 
 4. Sube los cambios a GitHub (ver abajo). En un par de minutos estará publicada.
 
@@ -121,7 +132,13 @@ Busca en todo el proyecto `[` y `TU-USUARIO`:
 4. En 1-2 minutos la web estará en `https://lsd1091.github.io/AlfombrArte/`.
 5. Cada vez que hagas `git push`, se vuelve a publicar sola.
 
-**Dominio propio** (opcional): en Settings → Pages → Custom domain escribe tu dominio y configura el DNS como indica GitHub. Después cambia `<base href="/alfombrarte/">` por `<base href="/">` en `404.html` y actualiza las URL absolutas (canonical, Open Graph, sitemap, robots).
+**Dominio propio.** Cuando compres el dominio (p. ej. `trufing.es`):
+
+1. Ejecuta `powershell -ExecutionPolicy Bypass -File tools/cambiar-dominio.ps1 -Dominio trufing.es`. Cambia todas las URL absolutas (canonical, Open Graph, datos estructurados, sitemap, robots), crea el archivo `CNAME`, pone `<base href="/">` en `404.html` y regenera las fichas.
+2. Haz commit y push.
+3. En GitHub: **Settings → Pages → Custom domain**, escribe el dominio y marca **Enforce HTTPS** cuando esté disponible.
+4. En tu proveedor de dominio, crea los registros DNS que indica GitHub: cuatro registros `A` del dominio raíz a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`, y un `CNAME` de `www` a `lsd1091.github.io`.
+5. Da de alta el dominio en Google Search Console (ver «Posicionamiento») y envía el sitemap.
 
 La carpeta `capturas/` y `.claude/` están en `.gitignore` y no se publican.
 
@@ -148,3 +165,22 @@ Supabase no avisa de las solicitudes nuevas. Mientras no se añada un aviso por 
 - `supabase/functions/` (vacío): aquí irán una Edge Function `crear-checkout` (recibe el id de la solicitud, calcula el importe en el servidor y crea la sesión de Stripe Checkout) y un `webhook-stripe` que marque `senal_pagada_at` / `pago_final_at` y actualice `estado`. Ambas usan la `service_role` en el servidor, nunca en el navegador.
 - `js/config.js → pagos` tiene los flags (`activo`, `edgeFunctionCheckout`) para activar el botón de pago.
 - La tabla ya tiene `estado`, importes y `stripe_checkout_session_id` (único). El panel interno necesitará usuarios autenticados de Supabase y políticas RLS de lectura/edición para el rol `authenticated` restringidas a los administradores.
+
+## Posicionamiento (SEO)
+
+Ya hecho en la web:
+
+- Una página estática por alfombra (`alfombras/<id>/`) con título, descripción, canonical, Open Graph y datos estructurados `Product` y `BreadcrumbList`.
+- Tarjetas del catálogo e Inicio en el HTML (Google ve los enlaces sin ejecutar JavaScript).
+- Páginas para búsquedas concretas: `alfombras-con-logo.html` y `alfombras-infantiles.html`, con preguntas frecuentes marcadas como `FAQPage`.
+- `Organization` en Inicio, `sitemap.xml` completo y `robots.txt`.
+- Imágenes WebP con `srcset`, medidas y `alt` descriptivos.
+
+Pendiente (lo tenéis que hacer vosotros):
+
+1. **Dominio propio** y `tools/cambiar-dominio.ps1` (ver «Desplegar»).
+2. **Google Search Console** (https://search.google.com/search-console): añade una propiedad de tipo *Dominio* con el nuevo dominio, verifícala con el registro TXT que te da Google en el DNS y envía `sitemap.xml` en **Sitemaps**. Revisa ahí cada semana **Páginas** (qué se indexa) y **Rendimiento** (qué búsquedas os traen).
+3. **Perfil de Empresa en Google** (https://business.google.com): categoría «Tienda de alfombras» o «Fabricante de alfombras», zona de servicio España, web, teléfono, horario y fotos reales del taller y de alfombras. Pide a los clientes que dejen su opinión allí.
+4. **Datos legales completos** (CIF, dirección fiscal, Registro Mercantil) en las páginas legales.
+5. **Redes sociales**: cuando haya Instagram o TikTok, añádelos en `sameAs` del JSON-LD de `index.html` y en el pie.
+6. **Fotos reales** del taller (Cómo trabajamos y Sobre nosotros) y más fotos y medidas en cada alfombra.

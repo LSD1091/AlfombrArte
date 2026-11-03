@@ -3,158 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alfombra hecha a mano por encargo · Trufing</title>
-  <meta name="description" content="Alfombra hecha a mano por encargo, a tu medida y en tus colores. Fabricación en 2–4 semanas y envío a toda España.">
-  <link rel="canonical" href="https://lsd1091.github.io/AlfombrArte/alfombra.html">
-  <meta name="theme-color" content="#f7f2ea">
-
-  <meta property="og:type" content="product">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="Trufing">
-  <meta property="og:title" content="Alfombra hecha a mano · Trufing">
-  <meta property="og:description" content="Alfombra hecha a mano por encargo, a tu medida y en tus colores.">
-  <meta property="og:image" content="https://lsd1091.github.io/AlfombrArte/img/og-portada.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="data/catalogo.json" as="fetch" type="application/json" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/config.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <title>Alfombra · Trufing</title>
+  <meta name="robots" content="noindex">
+  <!-- Las fichas ahora viven en alfombras/<id>/. Esta página redirige los enlaces antiguos alfombra.html?id=<id>. -->
+  <script>
+    (function () {
+      var id = new URLSearchParams(location.search).get("id");
+      location.replace(id && /^[a-z0-9-]+$/.test(id) ? "alfombras/" + id + "/" : "catalogo.html");
+    })();
+  </script>
 </head>
 <body>
-  <a class="saltar" href="#contenido">Saltar al contenido</a>
-
-  <header class="cabecera">
-    <div class="contenedor cabecera__fila">
-      <a class="marca" href="./" aria-label="Trufing, inicio">
-        <svg class="marca__nudo" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-          <path d="M6 22c0-6 4-12 10-12s10 6 10 12" />
-          <path d="M10 22c0-4 2.6-8 6-8s6 4 6 8" stroke="#a44a28" />
-          <path d="M14 22c0-2 .9-4 2-4s2 2 2 4" />
-          <path d="M3 25h26" />
-        </svg>
-        <span>Truf<span class="marca__arte">ing</span></span>
-      </a>
-      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="nav-principal">
-        <span class="menu-boton__icono" aria-hidden="true"></span>
-        <span>Menú</span>
-      </button>
-      <nav class="nav" id="nav-principal" aria-label="Principal">
-        <ul>
-          <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
-          <li><a href="tu-diseno.html">Tu diseño</a></li>
-          <li><a href="como-trabajamos.html">Cómo trabajamos</a></li>
-          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-        <a class="boton" href="encargar.html">Diseña tu alfombra</a>
-      </nav>
-    </div>
-  </header>
-
-
-  <main id="contenido">
-    <!-- Esta página se rellena con data/catalogo.json según ?id= -->
-    <div class="contenedor">
-      <nav class="migas cabecera-pagina" style="padding-bottom:0" aria-label="Migas de pan">
-        <ol>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="catalogo.html" data-ficha-cat>…</a></li>
-          <li><span aria-current="page" data-ficha-nombre>…</span></li>
-        </ol>
-      </nav>
-
-      <article class="ficha" data-ficha aria-busy="true">
-        <div class="galeria">
-          <!-- FOTO: se cargan desde img/catalogo/<id>/ (ver data/catalogo.json) -->
-          <div class="foto galeria__principal" data-galeria-principal></div>
-          <ul class="galeria__miniaturas" data-galeria-miniaturas aria-label="Más fotos"></ul>
-        </div>
-
-        <div class="ficha__info">
-          <p class="antetitulo" data-ficha-cat>…</p>
-          <h1 data-ficha-nombre>…</h1>
-          <p class="ficha__precio" data-ficha-precio></p>
-          <p class="ficha__desc" data-ficha-desc></p>
-          <dl class="datos-ficha" data-ficha-datos></dl>
-          <div class="ficha__acciones">
-            <a class="boton" href="encargar.html?tipo=catalogo" data-ficha-pedir>
-              Solicitar esta alfombra
-              <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
-            </a>
-            <a class="boton boton--borde" href="tu-diseno.html">Prefiero mi propio diseño</a>
-          </div>
-          <p class="ficha__nota">Sin compromiso: primero te enviamos el presupuesto. Solo se paga una señal del 30 % si decides seguir adelante.</p>
-        </div>
-      </article>
-
-      <div class="ficha__vacia" data-ficha-vacia hidden>
-        <h1>No encontramos esta alfombra</h1>
-        <p class="texto-secundario">Puede que el enlace esté mal o que el modelo ya no esté en el catálogo.</p>
-        <a class="boton" href="catalogo.html">Volver al catálogo</a>
-      </div>
-    </div>
-
-    <section class="seccion seccion--lino" aria-labelledby="otras-titulo">
-      <div class="contenedor">
-        <div class="cabecera-seccion cabecera-seccion--fila">
-          <div>
-            <p class="antetitulo">Más del catálogo</p>
-            <h2 id="otras-titulo">Otras alfombras parecidas</h2>
-          </div>
-          <a class="enlace-flecha" href="catalogo.html">Ver todo el catálogo</a>
-        </div>
-        <div class="rejilla" data-ficha-otras></div>
-      </div>
-    </section>
-  </main>
-
-
-  <footer class="pie">
-    <div class="contenedor">
-      <div class="pie__grid">
-        <div>
-          <a class="marca" href="./"><span>Truf<span class="marca__arte">ing</span></span></a>
-          <p class="pie__lema">Alfombras hechas a mano por encargo. Una a una, para una casa concreta.</p>
-        </div>
-        <div>
-          <h2>Alfombras</h2>
-          <ul>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="tu-diseno.html">Tu diseño</a></li>
-            <li><a href="encargar.html">Pedir presupuesto</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Taller</h2>
-          <ul>
-            <li><a href="como-trabajamos.html">Cómo trabajamos</a></li>
-            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-            <li><a href="como-trabajamos.html#faq">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Contacto</h2>
-          <ul>
-            <li><a href="contacto.html">Escríbenos</a></li>
-            <li><a href="mailto:lsd1091@gmail.com">lsd1091@gmail.com</a></li>
-            <li><a href="https://wa.me/34627605464" rel="noopener">WhatsApp +34 627 605 464</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="pie__legal">
-        <p>© <span data-anio>2026</span> Trufing · Envíos a España</p>
-        <ul>
-          <li><a href="legal/aviso-legal.html">Aviso legal</a></li>
-          <li><a href="legal/privacidad.html">Privacidad</a></li>
-          <li><a href="legal/cookies.html">Cookies</a></li>
-          <li><a href="legal/condiciones-venta.html">Condiciones de venta</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <p>Esta página se ha movido. <a href="catalogo.html">Ver el catálogo</a>.</p>
 </body>
 </html>
