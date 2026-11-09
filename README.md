@@ -181,6 +181,6 @@ Pendiente (lo tenéis que hacer vosotros):
 1. **Dominio propio** y `tools/cambiar-dominio.ps1` (ver «Desplegar»).
 2. **Google Search Console** (https://search.google.com/search-console): añade una propiedad de tipo *Dominio* con el nuevo dominio, verifícala con el registro TXT que te da Google en el DNS y envía `sitemap.xml` en **Sitemaps**. Revisa ahí cada semana **Páginas** (qué se indexa) y **Rendimiento** (qué búsquedas os traen).
 3. **Perfil de Empresa en Google** (https://business.google.com): categoría «Tienda de alfombras» o «Fabricante de alfombras», zona de servicio España, web, teléfono, horario y fotos reales del taller y de alfombras. Pide a los clientes que dejen su opinión allí.
-4. **Datos legales completos** (CIF, dirección fiscal, Registro Mercantil) en las páginas legales.
+4. **Datos registrales** (Registro Mercantil de Zaragoza: tomo, folio, hoja) en el aviso legal; CIF y domicilio ya están.
 5. **Redes sociales**: cuando haya Instagram o TikTok, añádelos en `sameAs` del JSON-LD de `index.html` y en el pie.
 6. **Fotos reales** del taller (Cómo trabajamos y Sobre nosotros) y más fotos y medidas en cada alfombra.
